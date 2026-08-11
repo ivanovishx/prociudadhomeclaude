@@ -34,6 +34,36 @@ export default function Footer() {
                   www.prociudad.com
                 </a>
               </li>
+              <li>
+                <a href="https://prociudad.com/login" target="_blank" rel="noreferrer">
+                  Iniciar sesión
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="footer-col">
+            <h4>Legal</h4>
+            <ul>
+              <li>
+                <a href="https://prociudad.com/privacy" target="_blank" rel="noreferrer">
+                  Política de Privacidad
+                </a>
+              </li>
+              <li>
+                <a href="https://prociudad.com/terms" target="_blank" rel="noreferrer">
+                  Acuerdo de Usuario
+                </a>
+              </li>
+              <li>
+                <a href="https://prociudad.com/rules" target="_blank" rel="noreferrer">
+                  Reglas ProCiudad
+                </a>
+              </li>
+              <li>
+                <a href="https://prociudad.com/accessibility" target="_blank" rel="noreferrer">
+                  Accesibilidad
+                </a>
+              </li>
             </ul>
           </div>
         </div>

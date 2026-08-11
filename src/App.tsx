@@ -10,6 +10,7 @@ import ModuleSection from './components/ModuleSection'
 import Benefits from './components/Benefits'
 import Stats from './components/Stats'
 import Audience from './components/Audience'
+import VideoSection from './components/VideoSection'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
 import { MODULES } from './data/modules'
@@ -95,6 +96,7 @@ export default function App() {
         <Benefits />
         <Stats />
         <Audience />
+        <VideoSection />
         <CTA />
       </main>
       <Footer />

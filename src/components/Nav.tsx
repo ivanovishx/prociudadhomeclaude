@@ -39,7 +39,17 @@ export default function Nav() {
           <a href="#beneficios">Beneficios</a>
           <a href="#plataforma">Plataforma</a>
         </nav>
-        <a className="btn btn--sm" href="#contacto">Solicitar demo</a>
+        <div className="nav-actions">
+          <a
+            className="btn btn--ghost btn--sm nav-login"
+            href="https://prociudad.com/login"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Iniciar sesión
+          </a>
+          <a className="btn btn--sm" href="#contacto">Solicitar demo</a>
+        </div>
         <div className="nav-progress" ref={progressRef} />
       </div>
     </header>
