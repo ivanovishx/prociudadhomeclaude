@@ -139,40 +139,48 @@ export const MODULES: ModuleData[] = [
   },
 ]
 
+export type BenefitIcon =
+  | 'papel'
+  | 'recaudacion'
+  | 'atencion'
+  | 'transparencia'
+  | 'datos'
+  | 'escala'
+
 export interface Benefit {
   title: string
   text: string
-  emoji: string
+  icon: BenefitIcon
 }
 
 export const BENEFITS: Benefit[] = [
   {
-    emoji: '🗂️',
+    icon: 'papel',
     title: 'Menos papel',
     text: 'Expedientes, boletas y comprobantes 100% digitales, con respaldo inmediato de toda la información.',
   },
   {
-    emoji: '📈',
+    icon: 'recaudacion',
     title: 'Mayor recaudación',
     text: 'Campañas con IA por WhatsApp y correo que convierten adeudos en pagos sin que nadie salga de casa.',
   },
   {
-    emoji: '🤖',
+    icon: 'atencion',
     title: 'Atención 24/7',
     text: 'El bot con inteligencia artificial responde dudas, gestiona convenios y aplica descuentos al instante.',
   },
   {
-    emoji: '🔍',
+    icon: 'transparencia',
     title: 'Transparencia total',
     text: 'Cada reporte, trámite y multa genera folio, historial y evidencia consultable en tiempo real.',
   },
   {
-    emoji: '📊',
+    icon: 'datos',
     title: 'Decisiones con datos',
     text: 'Indicadores estratégicos para directivos: retrasos, tasas de resolución y desempeño por dependencia.',
   },
   {
-    emoji: '🏛️',
+    icon: 'escala',
     title: 'Escala municipal o estatal',
     text: 'Funciona en una dependencia, en todo el municipio o en colaboración a nivel estatal.',
   },
