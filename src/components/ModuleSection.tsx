@@ -71,8 +71,10 @@ export default function ModuleSection({ module }: Props) {
             // gentle drift while the section stays pinned
             .to('.shot--main', { y: -46 }, 0.55)
             .to('.shot--a', { y: -90 }, 0.55)
-            .to('.shot--b', { y: -66 }, 0.55)
             .to('.module-bignum', { yPercent: -78 }, 0.55)
+          if (module.screenshots.length > 2) {
+            tl.to('.shot--b', { y: -66 }, 0.55)
+          }
         },
       )
 

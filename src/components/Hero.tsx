@@ -1,11 +1,11 @@
-import { lazy, Suspense, useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import gsap from 'gsap'
-
-const HeroCanvas = lazy(() => import('./HeroCanvas'))
+import HeroCanvas from './HeroCanvas'
 
 const TITLE_LINES: Array<Array<{ text: string; accent?: boolean }>> = [
-  [{ text: 'El sistema operativo' }],
-  [{ text: 'digital', accent: true }, { text: ' de tu ciudad' }],
+  [{ text: 'El sistema' }],
+  [{ text: 'operativo ' }, { text: 'digital', accent: true }],
+  [{ text: 'de tu ciudad' }],
 ]
 
 export default function Hero() {
@@ -28,13 +28,25 @@ export default function Hero() {
         .from('.hero-scroll', { autoAlpha: 0, duration: 0.8 }, '-=0.5')
 
       gsap.to(contentRef.current, {
-        yPercent: -28,
+        yPercent: -22,
         autoAlpha: 0,
         ease: 'none',
         scrollTrigger: {
           trigger: heroRef.current,
           start: 'top top',
-          end: 'bottom 35%',
+          end: 'bottom 45%',
+          scrub: true,
+        },
+      })
+
+      gsap.to('.hero-canvas', {
+        yPercent: 14,
+        autoAlpha: 0,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: heroRef.current,
+          start: 'top top',
+          end: 'bottom 30%',
           scrub: true,
         },
       })
@@ -44,10 +56,8 @@ export default function Hero() {
 
   return (
     <section className="hero" ref={heroRef} id="inicio">
-      <Suspense fallback={<div className="hero-canvas" />}>
-        <HeroCanvas />
-      </Suspense>
-      <div className="hero-vignette" />
+      <HeroCanvas />
+      <div className="hero-glow" />
       <div className="hero-content" ref={contentRef}>
         <div className="hero-badge">
           <span className="dot" />

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { asset } from '../lib/asset'
+import Logo from './Logo'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -32,7 +32,7 @@ export default function Nav() {
     <header className={`nav${scrolled ? ' is-scrolled' : ''}`}>
       <div className="nav-inner">
         <a href="#inicio" className="nav-logo" aria-label="ProCiudad — inicio">
-          <img src={asset('/logo-prociudad-white.png')} alt="ProCiudad" />
+          <Logo />
         </a>
         <nav className="nav-links" aria-label="Navegación principal">
           <a href="#modulos">Módulos</a>
