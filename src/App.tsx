@@ -82,6 +82,7 @@ export default function App() {
         <Hero />
         <Marquee />
         <Intro />
+        <VideoSection />
         <div className="modules-heading container" id="modulos">
           <span className="kicker">Nuestros módulos</span>
           <h2>
@@ -96,7 +97,6 @@ export default function App() {
         <Benefits />
         <Stats />
         <Audience />
-        <VideoSection />
         <CTA />
       </main>
       <Footer />
