@@ -14,8 +14,32 @@ import VideoSection from './components/VideoSection'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
 import { MODULES } from './data/modules'
+import { audio } from './lib/audio'
 
 gsap.registerPlugin(ScrollTrigger)
+
+/** Reads [data-narrate] sections aloud as they scroll into view. */
+function useNarrator() {
+  useEffect(() => {
+    const elements = Array.from(document.querySelectorAll<HTMLElement>('[data-narrate]'))
+    if (!elements.length) return
+    const spoken = new WeakSet<HTMLElement>()
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const el = entry.target as HTMLElement
+          if (!entry.isIntersecting || spoken.has(el) || !audio.enabled) continue
+          spoken.add(el)
+          audio.speak(el.dataset.narrate ?? '')
+        }
+      },
+      { threshold: 0.35 },
+    )
+    elements.forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [])
+}
 
 function useSmoothScroll() {
   useLayoutEffect(() => {
@@ -63,6 +87,7 @@ function useSmoothScroll() {
 
 export default function App() {
   useSmoothScroll()
+  useNarrator()
 
   useEffect(() => {
     const refresh = () => ScrollTrigger.refresh()
@@ -83,7 +108,11 @@ export default function App() {
         <Marquee />
         <Intro />
         <VideoSection />
-        <div className="modules-heading container" id="modulos">
+        <div
+          className="modules-heading container"
+          id="modulos"
+          data-narrate="Nuestros módulos: cinco módulos, una ciudad funcionando."
+        >
           <span className="kicker">Nuestros módulos</span>
           <h2>
             Cinco módulos.

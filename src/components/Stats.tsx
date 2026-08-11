@@ -48,7 +48,11 @@ export default function Stats() {
   }, [])
 
   return (
-    <section className="stats" ref={ref}>
+    <section
+      className="stats"
+      ref={ref}
+      data-narrate="Cinco módulos integrados en una sola plataforma: cien por ciento digital, con atención las veinticuatro horas."
+    >
       <div className="stats-grid container">
         {STATS.map((stat) => (
           <div className="stat" key={stat.label}>

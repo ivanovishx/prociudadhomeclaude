@@ -55,7 +55,12 @@ export default function Hero() {
   }, [])
 
   return (
-    <section className="hero" ref={heroRef} id="inicio">
+    <section
+      className="hero"
+      ref={heroRef}
+      id="inicio"
+      data-narrate="ProCiudad: el sistema operativo digital de tu ciudad, impulsado por inteligencia artificial."
+    >
       <HeroCanvas />
       <div className="hero-glow" />
       <div className="hero-content" ref={contentRef}>

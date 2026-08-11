@@ -27,7 +27,12 @@ export default function VideoSection() {
   }, [])
 
   return (
-    <section className="video-section" id="video" ref={ref}>
+    <section
+      className="video-section"
+      id="video"
+      ref={ref}
+      data-narrate="ProCiudad en acción: mira cómo Oaxaca ya lo está viviendo."
+    >
       <div className="container">
         <div className="video-head">
           <span className="kicker">ProCiudad en acción</span>

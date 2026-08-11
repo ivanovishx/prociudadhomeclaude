@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Logo from './Logo'
+import SoundToggle from './SoundToggle'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -40,6 +41,7 @@ export default function Nav() {
           <a href="#plataforma">Plataforma</a>
         </nav>
         <div className="nav-actions">
+          <SoundToggle />
           <a
             className="btn btn--ghost btn--sm nav-login"
             href="https://prociudad.com/login"

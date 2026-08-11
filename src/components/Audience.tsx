@@ -28,7 +28,12 @@ export default function Audience() {
   }, [])
 
   return (
-    <section className="audience" id="plataforma" ref={ref}>
+    <section
+      className="audience"
+      id="plataforma"
+      ref={ref}
+      data-narrate="Una plataforma, dos experiencias: hecha para el gobierno, amada por los ciudadanos."
+    >
       <div className="container">
         <span className="kicker">Una plataforma, dos experiencias</span>
         <h2 className="section-h2">

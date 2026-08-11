@@ -19,7 +19,12 @@ export default function CTA() {
   }, [])
 
   return (
-    <section className="cta" id="contacto" ref={ref}>
+    <section
+      className="cta"
+      id="contacto"
+      ref={ref}
+      data-narrate="Lleva tu ciudad al futuro digital. Agenda una demostración."
+    >
       <div className="container">
         <span className="kicker" style={{ justifyContent: 'center' }}>
           Da el siguiente paso

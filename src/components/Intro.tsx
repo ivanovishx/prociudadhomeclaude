@@ -69,7 +69,11 @@ export default function Intro() {
   }, [])
 
   return (
-    <section className="intro" ref={ref}>
+    <section
+      className="intro"
+      ref={ref}
+      data-narrate="Un gobierno digital no es el futuro: es lo que tus ciudadanos esperan hoy. ProCiudad conecta dependencias, trámites, pagos y ciudadanos en una sola plataforma."
+    >
       <div className="container">
         <p className="intro-text">
           {WORDS.map((w, i) => (

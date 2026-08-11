@@ -108,7 +108,11 @@ export default function Benefits() {
       startTrackX = Number(gsap.getProperty(track, 'x'))
       stop()
       gsap.killTweensOf(track)
-      wrap.setPointerCapture(e.pointerId)
+      try {
+        wrap.setPointerCapture(e.pointerId)
+      } catch {
+        // pointer may already be gone (synthetic or cancelled events)
+      }
       wrap.classList.add('is-dragging')
     }
     const onMove = (e: PointerEvent) => {
@@ -156,7 +160,12 @@ export default function Benefits() {
   }, [])
 
   return (
-    <section className="benefits" id="beneficios" ref={sectionRef}>
+    <section
+      className="benefits"
+      id="beneficios"
+      ref={sectionRef}
+      data-narrate="Beneficios: lo que tu gobierno gana con ProCiudad."
+    >
       <div className="container">
         <div className="benefits-head">
           <span className="kicker">Beneficios</span>

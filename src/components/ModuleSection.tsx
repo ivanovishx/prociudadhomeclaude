@@ -113,6 +113,7 @@ export default function ModuleSection({ module }: Props) {
       id={module.id}
       ref={sectionRef}
       style={{ '--accent': module.accent } as CSSProperties}
+      data-narrate={`Módulo ${module.index}: ${module.title}. ${module.tagline}.`}
     >
       <div className="module-glow" />
       <div className="module-inner container">

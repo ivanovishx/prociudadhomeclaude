@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { MEXICO_DOTS } from '../data/mexicoDots'
+import { audio } from '../lib/audio'
 
 const COUNT = MEXICO_DOTS.length
 /** map half-height in normalized units (half-width is 1) */
@@ -213,6 +214,9 @@ export default function HeroCanvas() {
       }
     }
 
+    // soft chimes while the pointer travels across the map area
+    let lastChimeX = 0
+    let lastChimeY = 0
     const update = (clientX: number, clientY: number) => {
       const ndc = toNDC(clientX, clientY)
       const pointer = pointerRef.current
@@ -220,6 +224,12 @@ export default function HeroCanvas() {
         pointer.x = ndc.x
         pointer.y = ndc.y
         pointer.active = true
+        const travelled = Math.hypot(clientX - lastChimeX, clientY - lastChimeY)
+        if (travelled > 28) {
+          lastChimeX = clientX
+          lastChimeY = clientY
+          audio.blip((ndc.y + 1) / 2, Math.min(1, travelled / 140))
+        }
       } else {
         pointer.active = false
       }
