@@ -531,8 +531,8 @@ button {
   font-weight: 700;
   font-size: clamp(300px, 44vw, 640px);
   line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(125, 15, 76, 0.13);
+  color: #ecdbe4;
+  color: color-mix(in srgb, var(--accent, var(--wine)) 14%, var(--bg));
   z-index: 0;
   pointer-events: none;
   user-select: none;
